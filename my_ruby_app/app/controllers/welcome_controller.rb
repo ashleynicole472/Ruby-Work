@@ -8,4 +8,8 @@ class WelcomeController < ApplicationController
     
   end
   
+  def articles
+    
+  end
+  
 end

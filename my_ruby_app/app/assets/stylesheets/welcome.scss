@@ -23,13 +23,6 @@
   width:30%; /* The width is 20%, by default */
 }
 
-// /* Use a media query to add a break point at 800px: */
-// @media screen and (max-width:800px) {
-//   .left, .main, .right {
-//     width:100%; /* The width is 100%, when the viewport is 800px or smaller */
-//   }
-// }
-
 .flex-container {
     display: -webkit-flex;
     display: flex;  
@@ -71,8 +64,8 @@ footer {
     text-decoration: none;
 }
 
-@media all and (min-width: 768px) {
-    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
-    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
-    footer {-webkit-order:3;order:3;}
-}
+// @media all and (min-width: 768px) {
+//     .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+//     .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+//     footer {-webkit-order:3;order:3;}
+// }
