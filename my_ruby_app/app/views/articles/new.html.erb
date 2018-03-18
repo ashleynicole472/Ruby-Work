@@ -1,7 +1,25 @@
 <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Reenie+Beanie" rel="stylesheet">
+<div class="flex-container">
+<header>
+  <h1 style="font-family: 'Reenie Beanie', cursive; font-size:5vw; text-align: center; color:#c31946;">About Page</h1>
+</header>
+<nav class="nav">
+<ul>
+  <li style="font-size: 50px; font-family: 'Reenie Beanie', cursive;"><u><b>Navigation</b></u></li><br>
+  <li style="font-size: 45px; font-family: 'Reenie Beanie', cursive;"><%= link_to "Home", root_path %></li><br>
+  <li style="font-size: 45px; font-family: 'Reenie Beanie', cursive;"><a href="#">Portfolio</a></li><br>
+  <li style="font-size: 45px; font-family: 'Reenie Beanie', cursive;"><a href="#">Contact</a></li><br>
+</ul>
+</nav>
+<article class="article">
+   <div class="right">
 <h1 style="font-size: 45px; font-family: 'Reenie Beanie', cursive;">New Article</h1>
 
 <%= render 'form', article: @article %>
 
 <h3 style="font-size: 45px; font-family: 'Reenie Beanie', cursive;"><%= link_to 'Back', articles_path %></h3>
 <ul style="font-size: 45px; font-family: 'Reenie Beanie', cursive;"><%= link_to "Back to home page", root_path %></ul><br>
+
+<footer>Copyright &copy; Asha&&Taylor</footer>
+
+</div>

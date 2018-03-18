@@ -1,3 +1,17 @@
+<link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Reenie+Beanie" rel="stylesheet">
+<div class="flex-container">
+<header>
+  <h1 style="font-family: 'Reenie Beanie', cursive; font-size:5vw; text-align: center; color:#c31946;">About Page</h1>
+</header>
+<nav class="nav">
+<ul>
+    <li style="font-size: 50px; font-family: 'Reenie Beanie', cursive;"><u><b>Navigation</b></u></li><br>
+  <li style="font-size: 45px; font-family: 'Reenie Beanie', cursive;"><%= link_to "Home", root_path %></li><br>
+  <li style="font-size: 45px; font-family: 'Reenie Beanie', cursive;"><a href="#">Portfolio</a></li><br>
+  <li style="font-size: 45px; font-family: 'Reenie Beanie', cursive;"><a href="#">Contact</a></li><br>
+</ul>
+</nav>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -6,9 +20,13 @@
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Description:</strong><br>
+  
   <%= @article.description %>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+
+
+<footer>Copyright &copy; Asha&&Taylor</footer>
