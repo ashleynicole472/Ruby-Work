@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-    skip_before_action :verify_authenticity_token 
+  before_action :set_article, only: [:edit, :update, :show, :destroy]
+  skip_before_action :verify_authenticity_token 
     
   def index
     @articles = Article.all
@@ -20,22 +21,22 @@ class ArticlesController < ApplicationController
   end
   
   def show
-    @article = Article.find(params[:id])
+    
   end
   
   def destroy
-    @article = Article.find(params[:id])
+    
     @article.destroy
     redirect_to articles_path
     flash[:notice] = "Article was deleted"
   end
   
   def edit
-    @article = Article.find(params[:id])
+    
   end
   
   def update
-    @article = Article.find(params[:id])
+    
     if @article.update(article_params)
       flash[:notice] = "Successfully updated!"
       redirect_to articles_path(@article)
@@ -47,5 +48,9 @@ class ArticlesController < ApplicationController
   private
     def article_params
       params.require(:article).permit(:title, :description)
+    end
+    
+    def set_article
+      @article = Article.find(params[:id])
     end
 end
