@@ -12,11 +12,20 @@ class ArticlesController < ApplicationController
   
   def create
     @article = Article.new(article_params)
-    
     if @article.save
-      redirect_to articles_path(@article)
+      flash[:success] = "Article was succesfully created."
+      redirect_to article_path(@article)
     else
       render 'new'
+    end
+  end
+  
+  def update
+    if @article.update(article_params)
+      flash[:success] = "Successfully updated!"
+      redirect_to article_path(@article)
+    else
+      render 'edit'
     end
   end
   
@@ -25,24 +34,13 @@ class ArticlesController < ApplicationController
   end
   
   def destroy
-    
     @article.destroy
+    flash[:danger] = "Article was deleted!"
     redirect_to articles_path
-    flash[:notice] = "Article was deleted"
   end
   
   def edit
     
-  end
-  
-  def update
-    
-    if @article.update(article_params)
-      flash[:notice] = "Successfully updated!"
-      redirect_to articles_path(@article)
-    else
-      render 'edit'
-    end
   end
   
   private
