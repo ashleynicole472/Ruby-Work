@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  
   protect_from_forgery
   
   def new
@@ -28,6 +27,10 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def show
+    @user = User.find(params[:id])
   end
   
   private
