@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   protect_from_forgery
   
   def index
-    @user = User.all
+    @users = User.paginate(page: params[:page], per_page: 5)
   end
   
   def new
