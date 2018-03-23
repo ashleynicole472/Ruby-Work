@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   protect_from_forgery
   
   def new
@@ -8,10 +9,24 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Hey there! Welcome to my blog #{@user.username}."
+      flash[:success] = "Welcome to Asha's blog #{@user.username}"
       redirect_to articles_path
     else
       render 'new'
+    end
+  end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to articles_path
+      flash[:success] = "Your account was update successfully!"
+    else
+      render 'edit'
     end
   end
   
