@@ -12,6 +12,8 @@ class ArticlesController < ApplicationController
   
   def create
     @article = Article.new(article_params)
+    # hard coding a user, to allow the ui to post and edit articles until more ui is implimented
+    @article.user = User.last
     if @article.save
       flash[:success] = "Article was succesfully created."
       redirect_to article_path(@article)
