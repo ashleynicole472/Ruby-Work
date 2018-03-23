@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   skip_before_action :verify_authenticity_token 
     
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 5)
   end
     
   def new
