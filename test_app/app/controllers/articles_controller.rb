@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :show, :destroy]
-  skip_before_action :verify_authenticity_token 
+  # skip_before_action :verify_authenticity_token 
+  #Requires that all users must be signed in to see anything other then the index and show actions
+  before_action :require_user, except: [:index, :show]
+  #This allows only the user signed in to be able to edit/update/delete their own articles
+  before_action :require_same_user, only: [:edit, :update, :destroy]
     
   def index
     @articles = Article.paginate(page: params[:page], per_page: 5)
@@ -55,3 +59,10 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 end
+
+  def require_same_user
+    if current_user != @article.user
+      flash[:danger] = "You can only edit/delete your own articles"
+      redirect_to articles_path
+    end
+  end
