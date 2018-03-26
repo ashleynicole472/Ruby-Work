@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :show, :destroy]
-  # skip_before_action :verify_authenticity_token 
+  skip_before_action :verify_authenticity_token 
   #Requires that all users must be signed in to see anything other then the index and show actions
   before_action :require_user, except: [:index, :show]
   #This allows only the user signed in to be able to edit/update/delete their own articles
@@ -21,8 +21,8 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     # hard coding a user, to allow the ui to post and edit articles until more ui is implimented
-    @article.user = User.last
-    # @article.user = User.find(session[:user_id])
+    # @article.user = User.last
+    @article.user = User.find(session[:user_id])
     if @article.save
       flash[:success] = "Article was succesfully created."
       redirect_to article_path(@article)
