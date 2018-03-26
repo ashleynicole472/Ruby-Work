@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  # protect_from_forgery
+  protect_from_forgery
+  skip_before_action :verify_authenticity_token 
   # to get ride of redundant code => @user = User.find(params[:id])
   before_action :set_user, only: [:edit, :update, :show]
   before_action :require_same_user, only: [:edit, :update]
