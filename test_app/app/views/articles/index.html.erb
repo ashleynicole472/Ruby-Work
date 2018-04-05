@@ -1,4 +1,13 @@
 <h1 align="center">Listing All Articles</h1><hr />
+<form align="center" class="navbar-form">
+  <div class="form-group">
+    <%= form_tag articles_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Article search" %>
+    <%= submit_tag "Search", :name => nil %>
+    <% end %>
+  </div>
+</form>
+
 <div align="center">
   <%= will_paginate %>
 </div>

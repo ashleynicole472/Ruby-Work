@@ -31,14 +31,6 @@
         <% end %>
           </li>
       </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <%= form_tag articles_path, :method => 'get' do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search" %>
-          <%= submit_tag "Search", :name => nil %>
-          <% end %>
-        </div>
-      </form>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
           <li><%= link_to 'Log out', logout_path, method: :delete %></li>
