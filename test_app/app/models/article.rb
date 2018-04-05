@@ -3,4 +3,13 @@ class Article < ActiveRecord::Base
   validates :title, presence: true, length: {minimum: 3, maximum: 50}
   validates :description, presence: true, length: {minimum: 10, maximum: 500}
   validates :user_id, presence: true
+  
+  def self.search(search)
+    if search.present?
+      where('title LIKE ?',"%#{search}%")
+    else
+      all
+    end
+  end
+  
 end
