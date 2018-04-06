@@ -2,8 +2,8 @@
 <form align="center" class="navbar-form">
   <div class="form-group">
     <%= form_tag articles_path, :method => 'get' do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Article search" %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Article search" %>
+    <%= submit_tag "Search", class: "btn btn-default", :name => nil %>
     <% end %>
   </div>
 </form>
