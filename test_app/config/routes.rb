@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   # delete to log out will go to sessions controller, destroy action
   delete 'logout', to: 'sessions#destroy'
   
+  resources :categories, except: [:destroy]
+  
 end
