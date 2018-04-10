@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # to get ride of redundant code => @user = User.find(params[:id])
   before_action :set_user, only: [:edit, :update, :show]
   before_action :require_same_user, only: [:edit, :update, :destroy]
-  before_action :require_admin, only: [:destroy]
+  # before_action :require_admin, only: [:destroy]
   
   def index
     @users = User.paginate(page: params[:page], per_page: 4).order('created_at DESC')
@@ -63,12 +63,5 @@ end
     if current_user != @user
       flash[:danger] = "You can only edit your own account!"
       redirect_to articles_path
-    end
-  end
-  
-  def require_admin
-    if logged_in? && !current_user.admin?
-      flash[:danger] = "Only admin users can delete perform this task!"
-      redirect_to root_path
     end
   end
