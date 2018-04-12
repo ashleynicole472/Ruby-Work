@@ -74,12 +74,25 @@ p {
   padding-left: 0;
 }
 
+.badge {
+  background-color: #c2edf4;
+  text-align: center !important ; 
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.input_checkbox input {
+  width: auto !important;
+}
+
+
 footer {
   padding-top: 5px;
   margin-top: 45px;
   border-top: 1px solid #eaeaea;
   color: #777;
-  position:auto;
+  position: auto;
 }
 
 footer.hover {
