@@ -4,6 +4,17 @@ $navbar-default-bg: #1a1762;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@media only screen and (max-width: 320px) {
+
+   body {
+      font-size: 2em;
+   }
+   p {
+      font-size: 2em;
+   }
+
+}
+
 #logo {
   float: left;
   padding-top: 10px;
@@ -43,7 +54,7 @@ $navbar-default-bg: #1a1762;
 }
 
 p {
-  font-size: 25px; 
+  font-size: 25px;
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -76,7 +87,7 @@ p {
 
 .badge {
   background-color: #c2edf4;
-  text-align: center !important ; 
+  text-align: center !important ;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
